@@ -25,7 +25,7 @@ Other highlights of the template include;
 There are also some custom hooks included. 
 
 ## upcoming 
-Authentication 
+- [ ] Authentication 
 
 ## Getting Started
 
