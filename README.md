@@ -33,7 +33,7 @@ yarn run dev
 With this typescript template, you can save some time in setting up a nextjs 14 app. It comes with some vital dependencies such as: 
 - Shadcn for ui
 - Tailwind for styling
-- zustant for state management
+- zustand for state management
 - next-themes for darak and light mode styling 
 - cookies-next for setting cookies 
 - lucide-react for icons 
