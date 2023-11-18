@@ -30,7 +30,7 @@ yarn run dev
  
 ```
 ## More info about the template 
-With this typescript template, you can save some time in setting up a nextjs 14 template. It comes with some vital dependencies such as: 
+With this typescript template, you can save some time in setting up a nextjs 14 app. It comes with some vital dependencies such as: 
 - Shadcn for ui
 - Tailwind for styling
 - zustant for state management
