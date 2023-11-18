@@ -1,4 +1,31 @@
-NextJS 14 starter template
+## NextJS 14 Starter Template with Dark/Light Mode included
+
+
+## Info about the template 
+With this typescript template, you can save some time in setting up a nextjs 14 app. It comes with some vital dependencies such as: 
+- Shadcn for ui
+- Tailwind for styling
+- zustand for state management
+- next-themes for darak and light mode styling 
+- cookies-next for setting cookies 
+- lucide-react for icons 
+and more ...
+
+Other highlights of the template include; 
+
+- A customizable cookie consent popup 
+- Axios interceptor and api call functions that help save time
+- Toast provider with sonner  
+- Custom 404 page that you can customize. 
+- Robots.txt generation
+- Sitemap generation
+- Initial setup for SEO optimization customizable to meet your needs
+- Dynamic OG generation using next/og
+
+There are also some custom hooks included. 
+
+## upcoming 
+Authentication 
 
 ## Getting Started
 
@@ -29,32 +56,6 @@ npm run dev
 yarn run dev
  
 ```
-## More info about the template 
-With this typescript template, you can save some time in setting up a nextjs 14 app. It comes with some vital dependencies such as: 
-- Shadcn for ui
-- Tailwind for styling
-- zustand for state management
-- next-themes for darak and light mode styling 
-- cookies-next for setting cookies 
-- lucide-react for icons 
-and more ...
-
-Other highlights of the template include; 
-
-- A customizable cookie consent popup 
-- Axios interceptor and api call functions that help save time
-- Toast provider with sonner  
-- Custom 404 page that you can customize. 
-- Robots.txt generation
-- Sitemap generation
-- Initial setup for SEO optimization customizable to meet your needs
-- Dynamic OG generation using next/og
-
-There are also some custom hooks included. 
-
-
-## upcoming 
-Authentication 
 
 ## Folder structure
 
