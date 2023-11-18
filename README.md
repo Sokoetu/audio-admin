@@ -42,7 +42,7 @@ and more ...
 Other highlights of the template include; 
 
 - A customizable cookie consent popup 
-- Axios interceptor and api call functions that helps save time
+- Axios interceptor and api call functions that help save time
 - Toast provider with sonner  
 - Custom 404 page that you can customize. 
 - Robots.txt generation
