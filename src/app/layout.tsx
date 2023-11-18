@@ -1,3 +1,13 @@
+/*
+    Root layout. 
+    It uses the toast-provider as a wrapper for sonner toast from context 
+    The theme provider is a wrapper for next-themes
+    The basemetadata from constants defines the initial metadata that is passed to the Metadat api from Nextjs
+
+    In the app directory, the apple-icon.png and favicon are included in the meta tags in the head section 
+    Add your's accordingly 
+*/
+
 import type { Metadata } from 'next'
 import dynamic from "next/dynamic"; 
 import { Inter } from 'next/font/google'
@@ -14,6 +24,9 @@ const inter = Inter({ subsets: ['latin'] })
 const ThemeProvider  = dynamic(() => import("@/providers/theme-provider"));
 
 // setting up metadata
+// as for the og image, a custom image is generated using the api/og route
+// check api/og for more details
+
 const {authors, creator, description, keywords, publisher, site, template, title, url} = baseMetadata; 
 export const metadata: Metadata = {
   metadataBase: new URL(url),

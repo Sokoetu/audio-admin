@@ -9,7 +9,7 @@ import {createToast} from "@/functions/toast";
 import Instance from './axiosInterceptor';
  
 
-export const postDoc = async (url, form, log) => {
+export const postDoc = async (url: string, form: any, log: boolean = false) => {
   try {
     let res = await Instance.post (url, form);
     let {data} = res; 
@@ -19,7 +19,7 @@ export const postDoc = async (url, form, log) => {
   }
 };
 
-export const patchDoc = async (url, form, log) => {
+export const patchDoc = async (url: string, form: any, log: boolean = false) => {
    try {
      let res = await Instance.patch (url, form);
      let {data} = res; 
@@ -29,7 +29,7 @@ export const patchDoc = async (url, form, log) => {
    }
  };
  
- export const deleteDoc = async (url, log) => {
+ export const deleteDoc = async (url: string, log: boolean = false) => {
    try {
     
      let res = await Instance.delete (url);
@@ -40,7 +40,7 @@ export const patchDoc = async (url, form, log) => {
    }
  };
 
-export const getDoc = async (url, log) => {
+export const getDoc = async (url: string, log: boolean = false) => {
    try {
       let res = await Instance.get(url); 
       let {data} = res; 
@@ -53,7 +53,7 @@ export const getDoc = async (url, log) => {
  
 // handling errors
 
-const handleAuthErr = (err, log) => {
+const handleAuthErr = (err: any, log: boolean = false) => {
     let {response} = err;
     let data = response?.data;
     let message = data?.message || data?.errorMessage || "Server Error!"

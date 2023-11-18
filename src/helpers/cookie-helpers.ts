@@ -1,3 +1,5 @@
+// for handling cookies, setting, getting, and removing
+
 import * as CookieHandlers from 'cookies-next'; 
 
 const setCookie = (title: string, value: string | number, options: any) => {

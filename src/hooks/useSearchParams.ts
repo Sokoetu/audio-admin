@@ -1,3 +1,4 @@
+// for getting the search params 
 import React from 'react'
 import {  useSearchParams } from "next/navigation";
 

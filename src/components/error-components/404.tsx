@@ -1,3 +1,4 @@
+// buttons for the 404 page
 "use client"; 
 
 import {useRouter} from "next/navigation"; 

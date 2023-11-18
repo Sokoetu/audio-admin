@@ -1,3 +1,13 @@
+/*
+  Group of functions that handle util functions
+  1. numberWithCommas - generates a comma based number based on the number of zeros 
+  2. getDaysInMonth - gets the days in a given month in a given year
+  3. months - an array that returns formatted months
+  4. getCurrentMonth - returns the current month formatted according nto the months array 
+  5. get currentMonthDays - returns number of days in current month
+   
+*/
+
 export const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
@@ -25,14 +35,22 @@ export const getCurrentMonth = (num) => {
   return months[num];
 };
 let today = new Date();
-export let currentMonthDays = getDaysInMonth(
+export const currentMonthDays = getDaysInMonth(
   today.getFullYear(),
   today.getMonth()
 );
-export let currentMonth = getCurrentMonth(today.getMonth());
+ 
 
+/*
+  For parsing the query parameters 
+  You might want to adjust based on your routing 
+*/
 // get current query items
+// just examples 
 export const getQueryItems = (query) => {
+  /*
+    Takes in the query string, and filters out the page, q, and category, to get the other query items
+  */
   if (!query) return [];
   let arr = [];
   for (const [key] of query.entries()) {
@@ -47,6 +65,10 @@ export const getQueryItems = (query) => {
 
 // generate url query
 export const generateQueryString = (fields, entries, list) => {
+  /* 
+    Takes in the fields, current entries in the query, and a list of what is expected to generate a query string
+    Again, just an example, you can customize it based on how you want
+  */
   let queryString = "?";
   let currQueryArr = [];
 
@@ -66,6 +88,7 @@ export const generateQueryString = (fields, entries, list) => {
 };
 
 export const generateServerQueryString = (searchParams) => {
+  // query string to send to server
   let queryString = "?";
   let keys = Object.keys(searchParams);
 
@@ -79,7 +102,7 @@ export const generateServerQueryString = (searchParams) => {
   return queryString;
 };
 
-// custom close on click outside of popover - specifically for search
+// custom close on click outside of popover or modal
 export const clickOutsideRef = (content_ref, setOpen) => {
   document?.addEventListener("mousedown", (e) => {
     if (content_ref?.current && !content_ref.current.contains(e.target)) {

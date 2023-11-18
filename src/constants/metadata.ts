@@ -1,3 +1,9 @@
+/*
+    Base metadata, you can generate these using ChatGPT 
+    Download the OG Spy or SEO Meta 1 Click extensions in chromium browsers to view and test your SEO in development
+    More info on nextjst metadata can be found here https://nextjs.org/docs/app/building-your-application/optimizing/metadata 
+*/
+
 const keywords: string[] = []
 
 const description = "Site description goes here"

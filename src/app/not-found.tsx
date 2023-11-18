@@ -1,3 +1,6 @@
+/*
+    Custom 404 page. You can add your own image and styles to match your style
+*/
 import type { Metadata } from 'next';
 import Image from "next/image";
 

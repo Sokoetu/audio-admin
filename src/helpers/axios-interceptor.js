@@ -1,3 +1,7 @@
+//  a wrapper for axios interceptor
+// helps avoid importing and adding headers on each api call
+// especially with those calls that require authorization 
+
 import axios from 'axios';
 import envs from '../config/env';
 import { getCookie } from './cookie-helpers';

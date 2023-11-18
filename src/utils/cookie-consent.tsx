@@ -1,3 +1,9 @@
+/*
+    A cookie consent pop-up that is customizable based on your own liking
+    Make sure to update the link to the cookie policy
+
+*/
+
 "use client"; 
 import React from "react";
 import Link from "next/link";

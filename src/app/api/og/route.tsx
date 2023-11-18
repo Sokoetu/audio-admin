@@ -1,3 +1,10 @@
+/*
+  Responsible for generating the OG image to when link is shared 
+  Customized as you may please. You can view the results at localhost:3000/api/og if ou are in development
+  The imported OG component is to just separate and make the code clean 
+  As the fonts, it is commented just in case you want to add yours. 
+*/
+
 import { ImageResponse } from 'next/og';
 
 import initialMetadata from "@/constants/metadata"; 
