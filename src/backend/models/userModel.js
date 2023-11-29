@@ -63,7 +63,7 @@ const UserSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: {
-        values: ["main", "admin", "user", "writer"],
+        values: ["main", "admin", "user"],
         message: "Role not allowed",
       },
       default: "user",
@@ -80,8 +80,7 @@ const UserSchema = new mongoose.Schema(
     passwordChangedAt: Date,
     passwordResetExpires: Date,
 
-    // for authors
-    posts: Number
+     
   },
   {
     toJSON: { virtuals: true },
