@@ -1,16 +1,35 @@
 /*
   Group of functions that handle util functions
   1. numberWithCommas - generates a comma based number based on the number of zeros 
-  2. getDaysInMonth - gets the days in a given month in a given year
-  3. months - an array that returns formatted months
-  4. getCurrentMonth - returns the current month formatted according nto the months array 
-  5. get currentMonthDays - returns number of days in current month
+  2. formatLargeNumber - formats large numbers to human readable
+  3. getDaysInMonth - gets the days in a given month in a given year
+  4. months - an array that returns formatted months
+  5. getCurrentMonth - returns the current month formatted according nto the months array 
+  6. get currentMonthDays - returns number of days in current month
    
 */
+
+import {format} from 'date-fns'; 
+
+export const formatDateToString = (date) => {
+  return format(new Date(date), "MMM dd, yyyy")
+}
 
 export const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+export function formatLargeNumber(number = 0) {
+  if (number >= 1e9) {
+      return (number / 1e9).toFixed(1) + 'B';
+  } else if (number >= 1e6) {
+      return (number / 1e6).toFixed(1) + 'M';
+  } else if (number >= 1e3) {
+      return (number / 1e3).toFixed(1) + 'K';
+  } else {
+      return number.toString();
+  }
+}
 
 export const getDaysInMonth = (year, month) => {
   return new Date(year, month + 1, 0).getDate();
@@ -39,7 +58,25 @@ export const currentMonthDays = getDaysInMonth(
   today.getFullYear(),
   today.getMonth()
 );
- 
+
+export function getTimeOfDay() {
+  // Get the current hour
+  var currentHour = new Date().getHours();
+
+  // Define the time ranges for morning, afternoon, and evening
+  var morningStart = 6;
+  var afternoonStart = 12;
+  var eveningStart = 18;
+
+  // Check the current hour and determine the time of day
+  if (currentHour >= morningStart && currentHour < afternoonStart) {
+    return "morning";
+  } else if (currentHour >= afternoonStart && currentHour < eveningStart) {
+    return "afternoon";
+  } else {
+    return "evening";
+  }
+}
 
 /*
   For parsing the query parameters 
@@ -110,3 +147,5 @@ export const clickOutsideRef = (content_ref, setOpen) => {
     }
   });
 };
+
+

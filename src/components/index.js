@@ -1,5 +1,11 @@
-import ThemeToggle from "./utils/theme-toggler";
+import Avatar from "./common/avatar"; 
+import Footer from "./footer"; 
+
+import Typography from "./common/typography";
+
 
 export {
-    ThemeToggle
+    Avatar,
+    Footer,
+    Typography
 }

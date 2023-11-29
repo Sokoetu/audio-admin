@@ -1,6 +1,14 @@
-//  a useEffect-like HOC, that helps with calling the attached function, and seting loading to false
-export async function customUseEffect(callback: () => void, setLoading?: React.Dispatch<boolean>, timer?: number) {
-    await callback();
-    if (setLoading) setTimeout(() => setLoading(false), timer || 1500)
-     
- }
+import { useEffect } from 'react';
+
+// Custom useEffect-like hook
+export const useCustomEffect = (callback:  () => void, dependencies: any[] = []) => {
+  useEffect(() => {
+    // Your custom logic goes here
+    callback();
+
+    // Cleanup function (if needed)
+    return () => {
+      // Cleanup logic (if needed)
+    };
+  }, dependencies);
+};

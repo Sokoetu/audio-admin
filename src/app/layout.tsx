@@ -13,6 +13,7 @@ import dynamic from "next/dynamic";
 import { Inter } from 'next/font/google'
 
 import { ToasterProvider } from '@/providers/toast-provider';
+import AuthProvider from '@/providers/auth-provider';
 
 // app specific 
 import {baseMetadata} from "@/constants"
@@ -65,8 +66,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-          
+          <AuthProvider
+            authType='cookie'
+            authName='_auth'
+          >
           {children}
+          </AuthProvider>
           <ToasterProvider />
           <CookieConsent />
         </ThemeProvider>  

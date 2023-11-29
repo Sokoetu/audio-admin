@@ -1,5 +1,15 @@
 ## NextJS 14 Starter Template with Dark/Light Mode included
 
+## Update 0.1.0 
+- Added authentication. Adopted from react-auth-kit 
+The template also has the necessary authentication pages /login /register /forgot /reset and more in /src/app(auth)
+- added some more components, making it easy to start a project without having  to worry  about the "commons"
+- a backend has also been included with the user  model, controller and API routes. 
+It uses mongodb, so make sure to check integration of mongodb on vercel 
+- the middleware.ts is meant to add CORS policies to allow external calling to your api. 
+- also added a .env.schema to outline what is needed in the .env file
+- There are other updates and as usual, the files contain comments explaining them. 
+
 
 ## Info about the template 
 With this typescript template, you can save some time in setting up a nextjs 14 app. It comes with some vital dependencies such as: 
@@ -25,7 +35,9 @@ Other highlights of the template include;
 There are also some custom hooks included. 
 
 ## upcoming 
-- [ ] Authentication 
+- [ x ] Authentication 
+- [ ] implementation of sockets for both front-end and back-end
+
 
 ## Getting Started
 
@@ -128,3 +140,4 @@ yarn run dev
     └── tsconfig.json
 
 ```
+

@@ -6,15 +6,19 @@ import { useTheme } from "next-themes"
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "../ui/button";
-
+import { useCustomEffect } from "@/hooks";
 
 export default function ThemeToggle () {
     const { theme, setTheme } = useTheme(); 
     const [mounted, setMounted] = React.useState(false)
 
-    React.useEffect(() => {setMounted(true)}, []); 
+    useCustomEffect(() => {setMounted(true)}, []); 
 
-    if (!mounted) return null; 
+    if (!mounted) return (
+        <Button variant="ghost" size="icon">
+             <Sun  />
+        </Button>
+    ); 
     return (
         <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "light" ? "dark": "light")}>
             {(theme === "light") ? <Moon  />: <Sun  />}

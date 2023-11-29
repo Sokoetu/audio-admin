@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { Metadata } from 'next'
 
-import {ThemeToggle} from "@/components";
+import ThemeToggle from "@/components/utils/theme-toggler";
 import {generateStaticMetadata} from "@/functions/metadata";
 
 export const metadata: Metadata = generateStaticMetadata('Home', "");

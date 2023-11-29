@@ -19,3 +19,10 @@ export const validateEmail = (email) => {
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 	  );
   };
+
+
+  // check if string is a valid url
+export function isValidURL(url) {
+	const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+	return urlPattern.test(url);
+  }

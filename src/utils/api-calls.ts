@@ -6,7 +6,8 @@
 */
 
 import {createToast} from "@/functions/toast"; 
-import Instance from './axiosInterceptor';
+import Instance from '@/helpers/axios-interceptor';
+import { removeCookie } from "@/helpers/cookie-helpers";
  
 
 export const postDoc = async (url: string, form: any, log: boolean = false) => {
@@ -56,8 +57,24 @@ export const getDoc = async (url: string, log: boolean = false) => {
 const handleAuthErr = (err: any, log: boolean = false) => {
     let {response} = err;
     let data = response?.data;
-    let message = data?.message || data?.errorMessage || "Server Error!"
+    let message = data?.message || data?.errorMessage || "Server Error!"; 
+    let code = response.status; 
     if (log) createToast("error", message);
+
+    // handle 403 - forbidden and 401 unauthorized errors
+    // by removing the user details and prompting for login
+    if (code === 403 || code === 401) {
+      let currentUrl = window.location.href; 
+      if (!currentUrl.includes("/register")) {
+        window.location.assign("/login")
+        
+        removeCookie("_auth"); 
+        removeCookie("_auth_state")
+        removeCookie("_auth_storage")
+        removeCookie("_auth_type")
+      }
+    }
+
     return {
       status: "fail",
       statusCode: response?.status, 

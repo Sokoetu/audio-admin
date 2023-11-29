@@ -2,7 +2,7 @@
 
 import * as CookieHandlers from 'cookies-next'; 
 
-const setCookie = (title: string, value: string | number, options: any) => {
+const setCookie = (title: string, value: string | number, options?: any) => {
     CookieHandlers.setCookie(title, value, options); 
  }
 
@@ -13,7 +13,7 @@ const setCookie = (title: string, value: string | number, options: any) => {
        return null
     }
  }
- const removeCookie = (title: string, options: any) => {
+ const removeCookie = (title: string, options?: any) => {
     if (CookieHandlers.hasCookie(title, options)) {
         CookieHandlers.deleteCookie(title, options); 
     }
