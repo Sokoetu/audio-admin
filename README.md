@@ -1,6 +1,6 @@
 ## NextJS 14 Starter Template with Dark/Light Mode included
 
-## Update 0.1.0 
+## Update 0.1.1 
 - Added authentication. Adopted from react-auth-kit 
 The template also has the necessary authentication pages /login /register /forgot /reset and more in /src/app(auth)
 - added some more components, making it easy to start a project without having  to worry  about the "commons"
