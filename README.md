@@ -35,7 +35,7 @@ Other highlights of the template include;
 There are also some custom hooks included. 
 
 ## upcoming 
-- [ x ] Authentication 
+- [x] Authentication 
 - [ ] implementation of sockets for both front-end and back-end
 
 
