@@ -17,7 +17,7 @@ export const registerUser = async (data) => {
 };
 
 export const activateUser = async (token) => {
-  const res = await getDoc(`/auth/activate?token=${token}&type=admin`)
+  const res = await getDoc(`/auth/activation?token=${token}&type=admin`)
   return res;  
 }
 export const requestActivationToken = async (email) => {
