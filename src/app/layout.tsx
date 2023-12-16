@@ -70,7 +70,7 @@ export default function RootLayout({
             authType='cookie'
             authName='_auth'
           >
-          {children}
+            {children}
           </AuthProvider>
           <ToasterProvider />
           <CookieConsent />

@@ -58,7 +58,7 @@ const handleAuthErr = (err: any, log: boolean = false) => {
     let {response} = err;
     let data = response?.data;
     let message = data?.message || data?.errorMessage || "Server Error!"; 
-    let code = response.status; 
+    let code = response?.status || 400; 
     if (log) createToast("error", message);
 
     // handle 403 - forbidden and 401 unauthorized errors
@@ -77,7 +77,7 @@ const handleAuthErr = (err: any, log: boolean = false) => {
 
     return {
       status: "fail",
-      statusCode: response?.status, 
+      statusCode: code, 
       message
     }; 
 }

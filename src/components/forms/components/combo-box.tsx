@@ -16,7 +16,8 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface ComboboxProps {
   title: string; 
@@ -48,26 +49,28 @@ const Combobox: React.FC<ComboboxProps> = ({title, values, value, setValue, comp
         <Command>
           <CommandInput placeholder={`Search ${title}...`} />
           <CommandEmpty>Nothing found.</CommandEmpty>
-          <CommandGroup>
-            {values.map((item) => (
-              <CommandItem
-                key={item.value}
-                value={item.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue.toLowerCase() === value ? "" : currentValue)
-                  setOpen(false)
-                }}
-              >
-                <Check
-                  className={cn(
-                    "mr-2 h-4 w-4",
-                    value === item.value.toLowerCase() ? "opacity-100" : "opacity-0"
-                  )}
-                />
-                {item.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
+          <ScrollArea className="h-[40vh]">
+            <CommandGroup>
+              {values.map((item) => (
+                <CommandItem
+                  key={item.value}
+                  value={item.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue.toLowerCase() === value ? "" : currentValue)
+                    setOpen(false)
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      value === item.value.toLowerCase() ? "opacity-100" : "opacity-0"
+                    )}
+                  />
+                  {item.label}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </ScrollArea>
         </Command>
         {component && component}
       </PopoverContent>

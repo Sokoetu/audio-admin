@@ -2,7 +2,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 
-import Editor from "./richtext-editor/editor" ; 
 import ImageUpload from "./image-upload"; 
 
 interface TextInputProps {
@@ -47,7 +46,7 @@ const TextInput: React.FC<TextInputProps> = ({
                                             const updatedValue = field.value.filter((imageUrl: string) => imageUrl !== url);
                                             field.onChange(updatedValue);
                                         }}
-                                        path={process.env.NODE_ENV === 'production' ? `/blog`: '/test/blogs'}
+                                        path={process.env.NODE_ENV === 'production' ? `/audio-books`: '/test/audio-books'}
                                         images={field.value}
                                     />
                                 )
@@ -63,15 +62,7 @@ const TextInput: React.FC<TextInputProps> = ({
                                 )
                                 
                             } 
-                            {
-                                editor && (
-                                    <Editor 
-                                        value={field.value}
-                                        setValue={field.onChange}
-                                        editable={!loading}
-                                    />
-                                )
-                            }
+                          
                             {
                                 (!file && !editor && !textarea) && (
                                     (
