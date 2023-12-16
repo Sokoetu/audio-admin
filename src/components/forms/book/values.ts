@@ -11,6 +11,10 @@ let values = [
           
      },
      {
+        name: "voice",
+        placeholder: "angie",
+    },
+     {
          name: "blurb",
          placeholder: "Short summary on the book",
          textarea: true
@@ -42,6 +46,7 @@ const formSchema = z.object({
     banner: z.array(z.string()).min(1, {message: "You need to upload a banner!"}),
     blurb: z.string().min(1, {message: "Preview is required!"}),
     author: z.string().min(1, {message: "Author field is required!"}),
+    voice: z.string().min(1, {message: "Voice is required!"}),
     pages: z.coerce.number(), 
     amount: z.coerce.number(), 
     published: z.string(), 
