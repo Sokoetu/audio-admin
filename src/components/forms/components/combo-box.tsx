@@ -40,7 +40,7 @@ const Combobox: React.FC<ComboboxProps> = ({title, values, value, setValue, comp
           className="w-[200px] justify-between"
         >
           {value
-            ? values.find((item) => item.value.toLowerCase() === value)?.label
+            ? values.find((item) => item.value === value)?.label
             : `Select ${title}...`}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -56,7 +56,7 @@ const Combobox: React.FC<ComboboxProps> = ({title, values, value, setValue, comp
                   key={item.value}
                   value={item.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue.toLowerCase() === value ? "" : currentValue)
+                    setValue(currentValue === value ? "" : item.value)
                     setOpen(false)
                   }}
                 >

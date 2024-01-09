@@ -34,7 +34,7 @@ const BookForm = ({initialData}: {initialData: any}) => {
     }, [user])
     useCustomEffect(() => {fetchCategories()}, [])
     const fetchCategories = async () => {
-        let res = await getCategories(); 
+        let res = await getCategories();  
 
         let cats = res.map((ct: string) => ({value: ct, label: ct}))
         setCategories(cats); 
@@ -51,6 +51,7 @@ const BookForm = ({initialData}: {initialData: any}) => {
     }
 
     const submitForm = async (data: BookFormValues) => {
+
         return await handleSubmit(
             data, category, sections, initialData, setLoading, 
             push, refresh
